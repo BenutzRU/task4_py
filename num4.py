@@ -1,8 +1,8 @@
 # Задание 4 - декоратор
 
-def debug_decorator(func):
+def decor(func):
     def wrapper(*args, **kwargs):
-        print(f"Функция '{func.__name__}'. \n {args}; {kwargs}")
+        print(f"'{func.__name__}'. \n {args}; {kwargs}")
         result = func(*args, **kwargs)
         return result
 
@@ -11,7 +11,11 @@ def debug_decorator(func):
     return wrapper
 
 
-@debug_decorator
+@decor
+
+
+
+
 def fib(n):
     a, b = 1, 1
     for _ in range(n):
